@@ -29,3 +29,39 @@ body {
     0 0 200px rgba(139, 134, 65, 0.4), 0 0 200px rgba(150, 91, 60, 0.193),
     0 0 200px rgba(175, 67, 67, 0.8), 0 0 200px rgba(187, 113, 60, 0.1);
 }
+
+.container:hover .text {
+  transform: rotateX(-360deg);
+}
+.container:hover .text:last-child {
+  transform: rotateX(630deg);
+}
+
+.container .text::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: #373737;
+  transform-origin: left;
+  transform: rotateY(90deg) translateX(-50px);
+}
+
+.container .text:last-child:before {
+  background: #353;
+}
+.container .text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(#434343, #535353);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: #fff;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
